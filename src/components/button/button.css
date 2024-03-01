@@ -16,10 +16,14 @@ button:hover {
     }
 }
 
+/* Header buttons */
+
 .button-container button {
     width: 128px;
     height: 32px;
 }
+
+/* Get data on countries in the world button */
 
 .country-cards-container button {
     width: 270px;
