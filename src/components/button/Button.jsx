@@ -1,16 +1,24 @@
 import './button.css';
 
-const Button = function ({ option, setUserChoice }) {
+const Button = function ({ buttonType, option, onClick }) {
     return (
-        <button
-            type='button'
-            onClick={() => {
-                option === 'all countries' ? setUserChoice(true) : setUserChoice(false)
-            }}
-        >
-            {option}
-        </button>
-    );
+        buttonType === 'option-button' ?
+            <button
+                type='button'
+                className={buttonType}
+                onClick={() => {
+                    option === 'all countries' ? onClick(true) : onClick(false)
+                }}
+            >
+                {option}
+            </button>
+            :
+            <button type='button'
+                className={buttonType}
+                onClick={onClick}>
+                {option}
+            </button>
+);
 }
 
 export default Button;

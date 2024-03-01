@@ -9,8 +9,8 @@ const Header = function ({ setUserChoice }) {
                 <p>Learn about all countries in the world...or about only one.</p>
             </hgroup>
             <div className='button-container'>
-                <Button option="all countries" setUserChoice={setUserChoice} />
-                <Button option="specific country" setUserChoice={setUserChoice} />
+                <Button buttonType='option-button' option="all countries" onClick={setUserChoice} />
+                <Button buttonType='option-button' option="specific country" onClick={setUserChoice} />
             </div>
         </header>
     );

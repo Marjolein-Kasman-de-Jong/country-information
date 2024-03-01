@@ -12,7 +12,8 @@
 
 :root {
   --white: #FFF;
-  --pink: #ffb0e6;
+  --grey: #a6a6a6;
+  --yellow: #ffd435;
 
   display: flex;
   flex-direction: column;
@@ -20,14 +21,20 @@
 }
 
 body {
+  width: 100vw;
   display: flex;
-  /* flex-direction: column;
-  align-items: center; */
   font-family: 'Roboto Condensed', sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: 'Gochi Hand', cursive;
   text-align: center;
   text-transform: uppercase;
+}
+
+/* Images */
+
+img {
+  width: 100%;
 }
