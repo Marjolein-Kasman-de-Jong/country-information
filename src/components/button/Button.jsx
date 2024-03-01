@@ -1,5 +1,7 @@
 import './button.css';
 
+// Deze kan mss nog gerefactord worden als search button ook klaar is
+
 const Button = function ({ buttonType, option, onClick }) {
     return (
         buttonType === 'option-button' ?
