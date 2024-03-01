@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto+Condensed:wght@300&display=swap');
 
-body {
+/* CSS reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+
+:root {
+  --white: #FFF;
+  --pink: #ffb0e6;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+body {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1, h2, h3 {
   font-family: 'Gochi Hand', cursive;
+  text-align: center;
   text-transform: uppercase;
 }

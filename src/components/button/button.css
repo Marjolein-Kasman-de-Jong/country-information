@@ -1,0 +1,12 @@
+button {
+    width: 148px;
+    padding: 12px;
+    border-radius: 24px;
+    font-family: inherit;
+    background-color: var(--white);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--pink);
+}
