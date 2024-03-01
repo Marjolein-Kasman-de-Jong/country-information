@@ -1,50 +1,26 @@
 .all-countries-card {
+    width: 100%;
+    max-width: 300px;
+    height: 100px;
+    padding: 12px;
     border: 1px solid var(--grey);
-    border-radius: 24px;
-    width: 280px;
-    height: 125px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-around;
-    
 }
 
 .all-countries-card-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     gap: 10px;
-    width: fit-content;
-    padding: unset;
-}
-
-h2 {
-    width: 70%;
 }
 
 .flag-wrapper {
-    width: 50px;
+    width: 100%;
+    max-width: 50px;
 }
 
-.africa {
-    color: blue;
+.country-name {
+    width: 100%;
 }
-
-.americas {
-    color: green;
-}
-
-.asia {
-    color: red;
-}
-
-.europe {
-    color: yellow;
-}
-
-.oceania {
-    color: purple;
-}
-

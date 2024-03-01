@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './components/header/Header';
 import AllCountries from './components/all-countries/AllCountries';
 import SpecificCountry from './components/specific-country/SpecificCountry';
+import sortByPopulationSize from './helpers/sortByPopulationSize';
 
 function App() {
 
@@ -12,12 +13,11 @@ function App() {
 
     async function fetchData() {
         try {
+            // Get country data 
             const response = await axios.get('https://restcountries.com/v3.1/all');
-            
-            (response.data).sort((a, b) => {
-                return a.population - b.population;
-            })
-
+            // Sort countries by population size
+            sortByPopulationSize(response);
+            // Set country data
             setCountryData(response);
         } catch {
             console.error(error);
@@ -25,11 +25,13 @@ function App() {
     }
 
     return (
-        <>
+        <div className='content-wrapper'>
+            {/* Header */}
             <Header setUserChoice={setUserChoice} />
+            {/* Main */}
             {userChoice ? <AllCountries countryData={countryData} fetchData={fetchData} /> : <SpecificCountry />}
-        </>
+        </div>
     )
 }
 
-export default App
+export default App;

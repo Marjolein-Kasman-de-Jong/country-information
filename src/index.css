@@ -14,24 +14,52 @@
   --white: #FFF;
   --grey: #a6a6a6;
   --yellow: #ffd435;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  --green: #6ac487;
+  --blue: #5575c2;
+  --red: #d14e5b;
+  --purple: #a653ba;
 }
+
+/* Typography */
 
 body {
-  width: 100vw;
-  display: flex;
   font-family: 'Roboto Condensed', sans-serif;
-  overflow-x: hidden;
+  font-size: 16px;
 }
 
-h1, h2, h3 {
+/* --Headings */
+
+h1 {
   font-family: 'Gochi Hand', cursive;
+  font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
 }
+
+h2 {
+  font-size: 1rem;
+}
+
+.africa {
+  color: var(--blue);
+}
+
+.americas {
+  color: var(--green);
+}
+
+.asia {
+  color: var(--red);
+}
+
+.europe {
+  color: var(--yellow);
+}
+
+.oceania {
+  color: var(--purple);
+}
+
 
 /* Images */
 

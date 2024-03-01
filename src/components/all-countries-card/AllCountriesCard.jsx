@@ -7,7 +7,7 @@ const AllCountriesCard = function ({ country, flag, population, continent }) {
                 <span className='flag-wrapper'>
                     <img src={flag} alt={`Flag of ${country}`} />
                 </span>
-                <h2 className={continent}>{country}</h2>
+                <h2 className={`country-name ${continent}`}>{country}</h2>
             </header>
             <p>{`Has a population of ${population} people`}</p>
         </article>

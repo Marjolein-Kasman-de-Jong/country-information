@@ -3,7 +3,7 @@ import './header.css';
 
 const Header = function ({ setUserChoice }) {
     return (
-        <header>
+        <header className='main-header'>
             <hgroup>
                 <h1>country information</h1>
                 <p>Learn about all countries in the world...or about only one.</p>
