@@ -6,8 +6,6 @@ import AllCountriesCard from '../all-countries-card/AllCountriesCard';
 const AllCountries = function ({ countryData, fetchData }) {
     let data = countryData.data;
 
-    
-
     return (
         <main>
             <section className="world-regions">

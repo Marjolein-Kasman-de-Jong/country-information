@@ -1,11 +1,9 @@
 import './App.css';
 import { useState } from 'react';
+import axios from 'axios';
 import Header from './components/header/Header';
 import AllCountries from './components/all-countries/AllCountries';
 import SpecificCountry from './components/specific-country/SpecificCountry';
-import axios from 'axios';
-
-
 
 function App() {
 
@@ -14,7 +12,12 @@ function App() {
 
     async function fetchData() {
         try {
-            let response = await axios.get('https://restcountries.com/v3.1/all');
+            const response = await axios.get('https://restcountries.com/v3.1/all');
+            
+            (response.data).sort((a, b) => {
+                return a.population - b.population;
+            })
+
             setCountryData(response);
         } catch {
             console.error(error);
