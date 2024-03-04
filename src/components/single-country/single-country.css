@@ -1,4 +1,4 @@
-.specific-country-container {
+.single-country-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,4 +17,8 @@ input {
 
 ::placeholder {
     color: var(--grey);
+}
+
+.error-message {
+    color: red;
 }

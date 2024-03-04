@@ -1,5 +1,5 @@
-import Button from '../button/Button';
 import './header.css';
+import Button from '../button/Button';
 
 const Header = function ({ setUserChoice }) {
     return (
@@ -10,7 +10,7 @@ const Header = function ({ setUserChoice }) {
             </hgroup>
             <div className='button-container'>
                 <Button buttonType='option-button' option="all countries" onClick={setUserChoice} />
-                <Button buttonType='option-button' option="specific country" onClick={setUserChoice} />
+                <Button buttonType='option-button' option="single country" onClick={setUserChoice} />
             </div>
         </header>
     );

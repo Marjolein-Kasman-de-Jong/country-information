@@ -1,12 +1,13 @@
-import './specific-country.css';
+import { useState } from 'react';
+import './single-country.css';
 import WorldMap from '../world-map/WorldMap';
 import CountryCard from '../country-card/CountryCard';
 import Button from '../button/Button';
 import roundToMillion from '../../helpers/roundToMillion';
-import { useState } from 'react';
 
-const SpecificCountry = function ({ userChoice, countryData, fetchData }) {
+const SingleCountry = function ({ userChoice, countryData, setSingleCountryData, fetchData }) {
     const [query, setQuery] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     let data;
     // Checks if countryData.data exists and has at least 1 element before trying to use it
@@ -20,11 +21,11 @@ const SpecificCountry = function ({ userChoice, countryData, fetchData }) {
 
     return (
         <main>
-            <section className="search-country-information">
+            <section className="single-country-information">
                 {/* World map */}
                 <WorldMap />
                 {/* Country card */}
-                <div className="specific-country-container">
+                <div className="single-country-container">
                     <div className="search-field">
                         <input
                             type="search"
@@ -36,20 +37,30 @@ const SpecificCountry = function ({ userChoice, countryData, fetchData }) {
                         <Button
                             buttonType='fetch-data-button'
                             option='Find country'
-                            onClick={() => fetchData(query)}
+                            onClick={async () => {
+                                try {
+                                    // Resets singleCountryData to make previously rendered CountryCard disappear  
+                                    setSingleCountryData({});
+                                    await fetchData(query);
+                                } catch (error) {
+                                    setErrorMessage(`${query} does not exist. Try again.`);
+                                }
+                            }}
                         />
                     </div>
-                    {data &&
+                    {data && data.name.common ?
                         <CountryCard
                             userChoice={userChoice}
                             country={data.name.common}
                             flag={data.flags.svg}
                             population={roundToMillion(data.population)}
-                            continent={data.subregion}
-                            capital={data.capital[0]}
-                            borders={data.borders.length}
+                            continent={data.subregion ? data.subregion : 'an unknown region'}
+                            capital={data.capital ? data.capital[0] : 'unknown'}
+                            borders={data.borders ? data.borders.length : 'an unknown amount of'}
                             domain={data.tld}
                         />
+                        :
+                        <p className="error-message">{errorMessage}</p>
                     }
                 </div>
             </section>
@@ -57,4 +68,4 @@ const SpecificCountry = function ({ userChoice, countryData, fetchData }) {
     );
 }
 
-export default SpecificCountry;
+export default SingleCountry;
