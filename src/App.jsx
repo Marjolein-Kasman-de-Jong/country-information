@@ -9,17 +9,29 @@ import sortByPopulationSize from './helpers/sortByPopulationSize';
 function App() {
 
     const [userChoice, setUserChoice] = useState(true);
-    const [countryData, setCountryData] = useState({});
+    const [allCountriesData, setAllCountriesData] = useState({});
+    const [singleCountryData, setSingleCountryData] = useState({});
 
-    async function fetchData() {
+    async function getAllCountries() {
         try {
-            // Get country data 
+            // Get all country data 
             const response = await axios.get('https://restcountries.com/v3.1/all');
             // Sort countries by population size
             sortByPopulationSize(response);
             // Set country data
-            setCountryData(response);
+            setAllCountriesData(response);
         } catch {
+            console.error(error);
+        }
+    }
+
+    async function getSingleCountry(query) {
+        try {
+            // Get single country data 
+            const response = await axios.get(`https://restcountries.com/v3.1/name/${query}`);
+            setSingleCountryData(response);
+        } catch {
+            // setSingleCountryData(error);
             console.error(error);
         }
     }
@@ -29,7 +41,7 @@ function App() {
             {/* Header */}
             <Header setUserChoice={setUserChoice} />
             {/* Main */}
-            {userChoice ? <AllCountries countryData={countryData} fetchData={fetchData} /> : <SpecificCountry />}
+            {userChoice ? <AllCountries userChoice={userChoice} countryData={allCountriesData} fetchData={getAllCountries} /> : <SpecificCountry userChoice={userChoice} countryData={singleCountryData} fetchData={getSingleCountry} />}
         </div>
     )
 }

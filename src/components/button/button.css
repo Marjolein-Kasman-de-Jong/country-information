@@ -23,10 +23,18 @@ button:hover {
     height: 32px;
 }
 
-/* Get data on countries in the world button */
+/* Get-data-on-all-countries-in-the-world button */
 
 .country-cards-container button {
     width: 270px;
     height: 56px;
+    padding: 0 12px;
+}
+
+/* Find-data-on-single-country button */
+
+.search-field button {
+    width: 120px;
+    height: 32px;
     padding: 0 12px;
 }

@@ -1,0 +1,20 @@
+.specific-country-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-field {
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+input {
+    padding: 0 8px;
+}
+
+::placeholder {
+    color: var(--grey);
+}

@@ -1,18 +1,16 @@
 import './all-countries.css';
-import worldMap from '../../assets/world_map.png';
-import AllCountriesCard from '../all-countries-card/AllCountriesCard';
+import WorldMap from '../world-map/WorldMap';
+import CountryCard from '../country-card/CountryCard';
 import Button from '../button/Button';
 
-const AllCountries = function ({ countryData, fetchData }) {
+const AllCountries = function ({ userChoice, countryData, fetchData }) {
     const data = countryData.data;
 
     return (
         <main>
             <section className="world-regions">
                 {/* World map */}
-                <span className="world-map-wrapper">
-                    <img src={worldMap} alt="World map" />
-                </span>
+                <WorldMap />
                 {/* Country cards */}
                 <div className="country-cards-container">
                     {/* Render either country cards or button */}
@@ -20,7 +18,8 @@ const AllCountries = function ({ countryData, fetchData }) {
                         data ?
                             data.map(country => {
                                 return (
-                                    <AllCountriesCard
+                                    <CountryCard
+                                        userChoice={userChoice}
                                         key={country.name.common}
                                         country={country.name.common}
                                         flag={country.flags.svg}
