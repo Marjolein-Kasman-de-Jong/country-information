@@ -1,0 +1,36 @@
+.country-card {
+    padding: 12px;
+    border: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.all-countries {
+    width: 100%;
+    max-width: 300px;
+    height: 100px;
+}
+
+.single-country {
+    width: 100%;
+    max-width: 450px;
+    height: 200px;
+}
+
+.country-card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.flag-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 50px;
+}
+
+.country-name {
+    width: 100%;
+}

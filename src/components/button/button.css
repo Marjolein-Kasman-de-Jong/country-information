@@ -1,0 +1,40 @@
+button {
+    border: 1px solid grey;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--grey);
+    line-height: 1rem;
+    background-color: var(--white);
+    box-sizing: border-box;
+}
+
+button:hover {
+    @media screen and (min-width: 768px) {
+        cursor: pointer;
+        border: 2px solid var(--grey);
+    }
+}
+
+/* Header buttons */
+
+.button-container button {
+    width: 128px;
+    height: 32px;
+}
+
+/* Get-data-on-all-countries-in-the-world button */
+
+.country-cards-container button {
+    width: 270px;
+    height: 56px;
+    padding: 0 12px;
+}
+
+/* Find-data-on-single-country button */
+
+.search-field button {
+    width: 120px;
+    height: 32px;
+    padding: 0 12px;
+}
